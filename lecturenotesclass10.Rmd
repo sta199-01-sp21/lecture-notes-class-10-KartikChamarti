@@ -168,7 +168,10 @@ rolle_results <- tibble(
 ```
 
 ```{r identify_events}
-
+rolle_results <- roll_results  %>%
+	mutate(event_1 = die_1 ^ 2 == die_2, 
+		event_2 = abs(die_1 - die_2) ==4)
+rolle_results
 ```
 
 ```{r summarize_rolls}
