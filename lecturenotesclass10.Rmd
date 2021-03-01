@@ -51,18 +51,19 @@ xtabs(~ Treatment + Improved, data = Arthritis) %>%
 ```
 
 - How many patients were enrolled in the clinical trial?
+  16848 patients were enrolled in the clinical trials. 
 
 - What is the probability a randomly selected patient received the placebo?
-
+  There is a 51% chance that a randomly selected patient received the placebo.
 - What is the probability a randomly selected patient received the placebo
   and had a marked improvement?
-  
+  Around 8.3%.
 - What is the probability a randomly selected patient received the placebo
   and the treatment?
-  
+  16.7%
 - What is the probability a randomly selected patient had some improvement or
   was on the treatment?
-
+  57%
 ## Using computer simulations to calculate probabilities
 
 #### Example
@@ -160,7 +161,10 @@ Perform a simulation to compute this empirical probability.
 Write down your guess to the answer before you calculate it.
 
 ```{r simulate_rolls}
-
+rolle_results <- tibble(
+  die_1 = replicate(n = 10000, expr = sample(1:6, size = 1)),
+  die_2 = replicate(n = 10000, expr = sample(1:6, size = 1))
+)
 ```
 
 ```{r identify_events}
